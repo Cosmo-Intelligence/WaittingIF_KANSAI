@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using System.Reflection;
-using System.Windows.Forms;
+using System.Threading;
 using WaitingInterface.Ctrl;
 using WaitingInterface.Util;
 
@@ -15,6 +15,11 @@ namespace WaitingInterface
         /// </summary>
         private static readonly log4net.ILog _log = log4net.LogManager.GetLogger(
                 MethodBase.GetCurrentMethod().DeclaringType);
+
+        /// <summary>
+        /// スレッド
+        /// </summary>
+        private Thread thread = null;
 
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
@@ -53,12 +58,12 @@ namespace WaitingInterface
 
                 AppConfigController.GetInstance().SetEAppConfigTableImpl(appConfigTable);
 
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-
                 _log.Info("待合機能データ連携処理を開始します。");
+
                 // スレッド処理へ
                 WaitingInterfaceController waitingInterface = new WaitingInterfaceController();
+                // thread = new Thread(waitingInterface.LinkageThread);
+                // thread.Start();
                 waitingInterface.LinkageThread();
 
             }

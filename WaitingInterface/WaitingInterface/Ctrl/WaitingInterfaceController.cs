@@ -95,8 +95,10 @@ namespace WaitingInterface.Ctrl
                 _log.Debug("待機処理に入ります。");
                 // 待機処理
                 this.WaitApplication();
+                _log.Debug("待機処理を抜けました。");
             }
 
+            _log.Debug("アプリケーション終了処理へ入ります。");
             // APを終了する
             this.ExitApplication();
         }
@@ -206,15 +208,31 @@ namespace WaitingInterface.Ctrl
             // 現在日時をスレッド待機日時が上回っているか判定
             while (DateTime.Now < sleepDateTime)
             {
+
+                _log.Debug("現在日時をスレッド待機日時が上回っています。");
                 // 終了指示があるか判定
                 if (this.appStopOrder)
                 {
+                    _log.Debug("終了指示がありました。");
                     // 現在日時とスレッド待機日時を比較しているループを終了
                     break;
                 }
-                // スレッドを1秒間待機
-                Thread.Sleep(1000);
+                _log.Debug("スレッド待機中です。");
+                try
+                {
+                    // スレッドを1秒間待機
+                    Thread.Sleep(1000);
+                }
+                catch (ThreadInterruptedException ex)
+                {
+                    _log.Debug("スレッドが中断されました。:" + ex);
+                }
+                catch (Exception ex)
+                {
+                    _log.Debug("予期しないエラーです。:" + ex);
+                }
             }
+            _log.Debug("スレッド待機処理を終了します。");
         }
 
         /// <summary>

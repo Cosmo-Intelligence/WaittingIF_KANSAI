@@ -19,7 +19,7 @@ namespace WaitingInterface
         /// <summary>
         /// スレッド
         /// </summary>
-        private Thread thread = null;
+        // private Thread thread = null;
 
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。

@@ -48,56 +48,57 @@ namespace WaitingInterface.Data.Export
                 write = new StreamWriter(Path.Combine(work, csvFile), false, OutputEnocode);
 
                 // ヘッダー作成
-                sb.Append(CustomizeColumn("KJID") + ",");
-                sb.Append(CustomizeColumn("SDATE") + ",");
-                sb.Append(CustomizeColumn("ODNO") + ",");
-                sb.Append(CustomizeColumn("ODSEQ") + ",");
-                sb.Append(CustomizeColumn("IDATE") + ",");
-                sb.Append(CustomizeColumn("SRNO") + ",");
-                sb.Append(CustomizeColumn("RYSID") + ",");
-                sb.Append(CustomizeColumn("ODRNO") + ",");
-                sb.Append(CustomizeColumn("IM_NGKBN") + ",");
-                sb.Append(CustomizeColumn("IM_KACD") + ",");
-                sb.Append(CustomizeColumn("IM_BYTCD") + ",");
-                sb.Append(CustomizeColumn("IM_BYST") + ",");
-                sb.Append(CustomizeColumn("KZ_NGKBN") + ",");
-                sb.Append(CustomizeColumn("KZ_KACD") + ",");
-                sb.Append(CustomizeColumn("KZ_BYTCD") + ",");
-                sb.Append(CustomizeColumn("KZ_BYST") + ",");
-                sb.Append(CustomizeColumn("HKPNO") + ",");
-                sb.Append(CustomizeColumn("XKSCD") + ",");
-                sb.Append(CustomizeColumn("XKGCD") + ",");
-                sb.Append(CustomizeColumn("NENKBN") + ",");
-                sb.Append(CustomizeColumn("SRCD") + ",");
-                sb.Append(CustomizeColumn("YW_HEYA") + ",");
-                sb.Append(CustomizeColumn("YW_DATE") + ",");
-                sb.Append(CustomizeColumn("YW_WSEQ") + ",");
-                sb.Append(CustomizeColumn("YTIME") + ",");
-                sb.Append(CustomizeColumn("SYJKN") + ",");
-                sb.Append(CustomizeColumn("ODKBN") + ",");
-                sb.Append(CustomizeColumn("IDCNM") + ",");
-                sb.Append(CustomizeColumn("IDCCD") + ",");
-                sb.Append(CustomizeColumn("KNDCD") + ",");
-                sb.Append(CustomizeColumn("JIDCD") + ",");
-                sb.Append(CustomizeColumn("GISCD") + ",");
-                sb.Append(CustomizeColumn("UKJKBN") + ",");
-                sb.Append(CustomizeColumn("UTIME") + ",");
-                sb.Append(CustomizeColumn("HKFLG") + ",");
-                sb.Append(CustomizeColumn("JSINF") + ",");
-                sb.Append(CustomizeColumn("KTKBN") + ",");
-                sb.Append(CustomizeColumn("JGFLG") + ",");
-                sb.Append(CustomizeColumn("CMTCD") + ",");
-                sb.Append(CustomizeColumn("RI_DATE") + ",");
-                sb.Append(CustomizeColumn("RI_TIME") + ",");
-                sb.Append(CustomizeColumn("RI_UKJKBN") + ",");
-                sb.Append(CustomizeColumn("RI_SUKJKBN") + ",");
-                sb.Append(CustomizeColumn("RI_SITSU") + ",");
-                sb.Append(CustomizeColumn("ENTER") + ",");
-                sb.Append(CustomizeColumn("LEAVE") + ",");
-                sb.Append(CustomizeColumn("STAY") + ",");
-                sb.Append(CustomizeColumn("JTIME") + ",");
-                sb.Append(CustomizeColumn("FILLER") + ",");
-                sb.Append(CustomizeColumn("ACCESSION_NO") + ",");
+                sb.Append("KJID" + ",");
+                sb.Append("SDATE" + ",");
+                sb.Append("ODNO" + ",");
+                sb.Append("ODSEQ" + ",");
+                sb.Append("IDATE" + ",");
+                sb.Append("SRNO" + ",");
+                sb.Append("RYSID" + ",");
+                sb.Append("ODRNO" + ",");
+                sb.Append("IM_NGKBN" + ",");
+                sb.Append("IM_KACD" + ",");
+                sb.Append("IM_BYTCD" + ",");
+                sb.Append("IM_BYST" + ",");
+                sb.Append("KZ_NGKBN" + ",");
+                sb.Append("KZ_KACD" + ",");
+                sb.Append("KZ_BYTCD" + ",");
+                sb.Append("KZ_BYST" + ",");
+                sb.Append("HKPNO" + ",");
+                sb.Append("XKSCD" + ",");
+                sb.Append("XKGCD" + ",");
+                sb.Append("NENKBN" + ",");
+                sb.Append("SRCD" + ",");
+                sb.Append("YW_HEYA" + ",");
+                sb.Append("YW_DATE" + ",");
+                sb.Append("YW_WSEQ" + ",");
+                sb.Append("YTIME" + ",");
+                sb.Append("SYJKN" + ",");
+                sb.Append("ODKBN" + ",");
+                sb.Append("IDCNM" + ",");
+                sb.Append("IDCCD" + ",");
+                sb.Append("KNDCD" + ",");
+                sb.Append("JIDCD" + ",");
+                sb.Append("GISCD" + ",");
+                sb.Append("UKJKBN" + ",");
+                sb.Append("UTIME" + ",");
+                sb.Append("HKFLG" + ",");
+                sb.Append("JSINF" + ",");
+                sb.Append("KTKBN" + ",");
+                sb.Append("JGFLG" + ",");
+                sb.Append("CMTCD" + ",");
+                sb.Append("RI_DATE" + ",");
+                sb.Append("RI_TIME" + ",");
+                sb.Append("RI_UKJKBN" + ",");
+                sb.Append("RI_SUKJKBN" + ",");
+                sb.Append("RI_SITSU" + ",");
+                sb.Append("ENTER" + ",");
+                sb.Append("LEAVE" + ",");
+                sb.Append("STAY" + ",");
+                sb.Append("JTIME" + ",");
+                sb.Append("FILLER" + ",");
+                sb.Append("ACCESSION_NO" + ",");
+                sb.Append("XCODE");
 
                 // CSVファイルに書き出し
                 write.WriteLine(sb.ToString());
@@ -110,56 +111,57 @@ namespace WaitingInterface.Data.Export
                 {
                     try
                     {
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.KANJA_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.KENSA_DATE].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.ORDERNO].ToString()) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.ODSEQ) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.HIS_HAKKO_DATE].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.RECEIPTNUMBER].ToString()) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.RYSID) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.ORDERNO].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.DENPYO_NYUGAIKBN].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.IRAI_SECTION_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.DENPYO_BYOUTOU_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.DENPYO_BYOSITU_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.KANJA_NYUGAIKBN].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.SECTION_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.BYOUTOU_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.BYOUSITU_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.ADDENDUM02].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.KENSATYPE_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.XKGCD) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.NENKBN) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.SRCD) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.KENSASITU_ID].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.KENSA_DATE].ToString()) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.YW_WSEQ) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.KENSA_STARTTIME].ToString()) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.SYJKN) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.ODKBN) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.IRAI_DOCTOR_NAME].ToString()) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.IRAI_DOCTOR_NO].ToString()) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.KNDCD) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.JIDCD) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.GISCD) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.UKJKBN) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.RECEIPTDATE].ToString()) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.HKFLG) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.JSINF) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.KTKBN) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.JGFLG) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.CMTCD) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.RI_DATE) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.RI_TIME) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.RI_UKJKBN) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.RI_SUKJKBN) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.RI_SITSU) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.ENTER) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.LEAVE) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.STAY) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.JTIME) + ",");
-                        sb.Append(CustomizeColumn(LinkageDataEntity.FILLER) + ",");
-                        sb.Append(CustomizeColumn(dtRow[LinkageDataEntity.ACCESSIONNO].ToString()) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.KANJA_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.KENSA_DATE].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.ORDERNO].ToString() + ",");
+                        sb.Append((LinkageDataEntity.ODSEQ) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.HIS_HAKKO_DATE].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.RECEIPTNUMBER].ToString() + ",");
+                        sb.Append((LinkageDataEntity.RYSID) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.ORDERNO].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.DENPYO_NYUGAIKBN].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.IRAI_SECTION_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.DENPYO_BYOUTOU_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.DENPYO_BYOSITU_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.KANJA_NYUGAIKBN].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.SECTION_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.BYOUTOU_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.BYOUSITU_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.ADDENDUM02].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.KENSATYPE_ID].ToString() + ",");
+                        sb.Append((LinkageDataEntity.XKGCD) + ",");
+                        sb.Append((LinkageDataEntity.NENKBN) + ",");
+                        sb.Append((LinkageDataEntity.SRCD) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.KENSASITU_ID].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.KENSA_DATE].ToString() + ",");
+                        sb.Append((LinkageDataEntity.YW_WSEQ) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.KENSA_STARTTIME].ToString() + ",");
+                        sb.Append((LinkageDataEntity.SYJKN) + ",");
+                        sb.Append((LinkageDataEntity.ODKBN) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.IRAI_DOCTOR_NAME].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.IRAI_DOCTOR_NO].ToString() + ",");
+                        sb.Append((LinkageDataEntity.KNDCD) + ",");
+                        sb.Append((LinkageDataEntity.JIDCD) + ",");
+                        sb.Append((LinkageDataEntity.GISCD) + ",");
+                        sb.Append((LinkageDataEntity.UKJKBN) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.RECEIPTDATE].ToString() + ",");
+                        sb.Append((LinkageDataEntity.HKFLG) + ",");
+                        sb.Append((LinkageDataEntity.JSINF) + ",");
+                        sb.Append((LinkageDataEntity.KTKBN) + ",");
+                        sb.Append((LinkageDataEntity.JGFLG) + ",");
+                        sb.Append((LinkageDataEntity.CMTCD) + ",");
+                        sb.Append((LinkageDataEntity.RI_DATE) + ",");
+                        sb.Append((LinkageDataEntity.RI_TIME) + ",");
+                        sb.Append((LinkageDataEntity.RI_UKJKBN) + ",");
+                        sb.Append((LinkageDataEntity.RI_SUKJKBN) + ",");
+                        sb.Append((LinkageDataEntity.RI_SITSU) + ",");
+                        sb.Append((LinkageDataEntity.ENTER) + ",");
+                        sb.Append((LinkageDataEntity.LEAVE) + ",");
+                        sb.Append((LinkageDataEntity.STAY) + ",");
+                        sb.Append((LinkageDataEntity.JTIME) + ",");
+                        sb.Append((LinkageDataEntity.FILLER) + ",");
+                        sb.Append(dtRow[LinkageDataEntity.ACCESSIONNO].ToString() + ",");
+                        sb.Append(dtRow[LinkageDataEntity.BUI_ID].ToString());
 
                         // 出力件数カウントインクリメント
                         dtCnt++;
@@ -199,11 +201,11 @@ namespace WaitingInterface.Data.Export
         /// </summary>
         /// <param name="column"></param>
         /// <returns>カスタマイズしたカラム名</returns>
-        private static string CustomizeColumn(string column)
-        {
-            column = @"""" + column + @"""";
-            return column;
-        }
+        //private static string CustomizeColumn(string column)
+        //{
+        //    column = @"""" + column + @"""";
+        //    return column;
+        //}
 
     }
 }

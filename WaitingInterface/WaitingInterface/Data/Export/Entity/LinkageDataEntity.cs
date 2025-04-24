@@ -29,6 +29,7 @@ namespace WaitingInterface.Data.Export.Entity
         public const string IRAI_DOCTOR_NO = "IRAI_DOCTOR_NO";
         public const string RECEIPTDATE = "RECEIPTDATE";
         public const string ACCESSIONNO = "ACCESSIONNO";
+        public const string BUI_ID = "BUI_ID";
 
         #endregion
 

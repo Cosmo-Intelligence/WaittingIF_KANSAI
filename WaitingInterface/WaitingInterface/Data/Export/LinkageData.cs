@@ -32,6 +32,12 @@ namespace WaitingInterface.Data.Export
         private static string kensa_type =
                        AppConfigController.GetInstance().GetValueString(AppConfigParameter.KensaType).Replace(" ", "").Replace(",", "','");
 
+        /// <summary>
+        /// 検査室（出力対象外）
+        /// </summary>
+        private static string kensaSitu_NotIn =
+        AppConfigController.GetInstance().GetValueString(AppConfigParameter.KensaSitu_NotIn).Replace(" ", "").Replace(",", "','");
+
         #endregion
 
 
@@ -47,9 +53,23 @@ namespace WaitingInterface.Data.Export
         {
             try
             {
-                // SQL実行
-                db.GetDataTable(
-                        ConstQuery.DATA_SELECT, ref linkageDt, "'" + kensa_status + "'", "'" + kensa_type + "'");
+                string sql = ConstQuery.DATA_SELECT;
+                
+                // 出力対象外の検査室：なし
+                if(kensaSitu_NotIn == "0")
+                {
+                    // SQL実行
+                    db.GetDataTable(sql, ref linkageDt, "'" + kensa_status + "'", "'" + kensa_type + "'");
+                }
+                // 出力対象外の検査室：あり
+                else
+                {
+                    // 抽出条件に出力対象外検査室を追加
+                    sql += ConstQuery.KENSASITU_ID_NOT_IN;
+                    // SQL実行
+                    db.GetDataTable(sql, ref linkageDt, "'" + kensa_status + "'", "'" + kensa_type + "'", "'" + kensaSitu_NotIn + "'");
+                }
+
             }
             catch (Exception ex)
             {

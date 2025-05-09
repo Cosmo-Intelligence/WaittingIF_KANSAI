@@ -91,6 +91,7 @@ namespace WaitingInterface
             if (!CommonUtil.getNotEmptyAppConfigValue(AppConfigParameter.ThreadInterval, table)) { return false; }
             if (!CommonUtil.getNotEmptyAppConfigValue(AppConfigParameter.KensaStatus, table)) { return false; }
             if (!CommonUtil.getNotEmptyAppConfigValue(AppConfigParameter.KensaType, table)) { return false; }
+            if (!CommonUtil.getNotEmptyAppConfigValue(AppConfigParameter.KensaSitu_NotIn, table)) { return false; }
             if (!CommonUtil.getNotEmptyAppConfigValue(AppConfigParameter.CSVFolder, table)) { return false; }
             if (!CommonUtil.getNotEmptyAppConfigValue(AppConfigParameter.CSVFile, table)) { return false; }
 

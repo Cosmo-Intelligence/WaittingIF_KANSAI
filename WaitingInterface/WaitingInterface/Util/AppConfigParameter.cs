@@ -48,6 +48,11 @@ namespace WaitingInterface.Util
         /// </summary>
         public static string KensaType = "KensaType";
 
+        /// <summary>
+        /// 検査室（出力対象外）
+        /// </summary>
+        public static string KensaSitu_NotIn = "KensaSitu_NotIn";
+
         #endregion
 
     }

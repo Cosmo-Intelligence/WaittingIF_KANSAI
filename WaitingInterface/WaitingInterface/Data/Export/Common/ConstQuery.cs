@@ -51,6 +51,12 @@ namespace WaitingInterface.Data.Export.Common
                 + " and"
                 + " EXMAINTABLE.KENSATYPE_ID in ({1})";
 
+        /// <summary>
+        /// 出力対象外の検査室
+        /// </summary>
+        public const string KENSASITU_ID_NOT_IN =
+        " and EXMAINTABLE.KENSASITU_ID not in ({2})";
+
         #endregion
 
     }
